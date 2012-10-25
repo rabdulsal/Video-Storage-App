@@ -1,0 +1,15 @@
+<h1>Enter the URL for a new Youtube Video!</h1>
+
+<%= form_tag "/videos", "method" => "post" do %>
+	<ul>
+		<li>
+		<%= label_tag "url", "URL:" %><%= text_field_tag "url" %>
+		</li>
+		<li>
+		<%= label_tag "title", "Title:" %><%= text_field_tag "title" %>
+		</li>
+		<li>
+		<%= submit_tag "Save Video" %>
+		</li>
+	</ul>
+<% end %>

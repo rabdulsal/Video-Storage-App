@@ -1,0 +1,15 @@
+<h1>Here are your favorite videos!</h1>
+
+<%= link_to "Add a new video!", "/new" %>
+
+<% @video.reverse.each do |vid| %>
+	<ul>
+		<li>
+			<iframe width="560" height="315" src="<%= vid.url %>" frameborder="0" allowfullscreen></iframe>
+			<div>
+				<%= link_to "Edit", "/videos/#{vid.id}/edit" %>
+				<%= link_to "Delete", "/videos/#{vid.id}", :method => :delete, :confirm => "Are you sure you want to permanently delete this video?" %>
+			</div>
+		</li>
+	</ul>
+<% end %>

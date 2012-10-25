@@ -1,0 +1,7 @@
+<h1>Edit your Video's embed URL.</h1>
+
+<%= form_tag "/videos/#{@vid.id}", "put" do %>
+	<%= label_tag "url", "URL:" %><%= text_field_tag "url", @vid.url %>
+	<%= label_tag "title", "Video Title:" %><%= text_field_tag "title", @vid.title %>
+	<%= submit_tag "Save Video" %>
+<% end %>
